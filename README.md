@@ -554,7 +554,7 @@ python tests/smoke_test.py
 
 遇到不明白的、程序报错、有其它问题都可以提 issue，上面菜单栏里点 **Issues**，
 然后点绿色的 **New issue**，把你的问题填进去再点 **Create**。要还是弄不明白怎么提 issue
-或者你就是不想让别人看你写了啥可以邮箱找我：[ishtartang@163.com](mailto:ishtartang@163.com)，
+或者你就是不想让别人看你写了啥可以邮箱找我：
 但不要在提了 issue 之后又给我发邮件。
 
 #### 程序更新
