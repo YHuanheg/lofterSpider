@@ -1,6 +1,16 @@
-requests==2.27.1
-lxml==4.8.0
-urllib3==1.26.9
-html2text
-json5
-numpy
+# lofterSpider 依赖（已适配 Python 3.12）
+#
+# 相对旧版 requirements 的改动及原因：
+#   lxml==4.8.0        → lxml>=5.2.0     4.8.0 发布于 2022-03，PyPI 上没有 cp312 轮子，
+#                                        在 3.12 上只能源码编译（需要 libxml2/libxslt），
+#                                        Windows 上几乎必然失败。
+#   requests==2.27.1   → requests>=2.32.0 旧版把 urllib3 钉在 <1.27，与 3.12 生态脱节。
+#   urllib3==1.26.9    → 删除            由 requests 传递依赖，不再显式钉版。
+#   json5              → 删除            全项目从未 import 过。
+#   numpy              → 删除            只在一个废弃函数里用了 np.where，已改为纯 Python。
+#
+# 图形界面用标准库 tkinter，不需要额外安装。
+
+requests>=2.32.0
+lxml>=5.2.0
+html2text>=2024.2.26

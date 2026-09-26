@@ -11,6 +11,16 @@ test.*
 .idea
 test_dir
 
+# 本项目的运行时数据
+# config/ 里放的是登录凭证与你的参数设置，不应该提交
+config/
+# 助手的工作记忆 / 会话临时文件：含本机路径，不是项目交付物，不提交
+.workbuddy/
+links.txt
+blog.txt
+tag_data.json
+blog.json
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

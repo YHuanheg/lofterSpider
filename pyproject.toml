@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lofterspider"
+version = "2.0.0"
+description = "lofter 内容抓取工具：保存我的喜欢 / 推荐 / tag / 作者主页，带图形界面"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "IshtarTang" }]
+keywords = ["lofter", "spider", "crawler", "scraper", "gui", "tkinter"]
+dependencies = [
+    "requests>=2.32.0",
+    "lxml>=5.2.0",
+    "html2text>=2024.2.26",
+]
+
+[project.optional-dependencies]
+# 可选能力：缺失时对应功能会置灰/跳过并给出安装提示，不影响核心抓取
+dev = ["build>=1.2.1"]
+browser = ["browser-cookie3>=0.19"]   # 从本机浏览器读取 login_auth
+epub = ["EbookLib>=0.18"]             # 合集导出 EPUB
+all = ["browser-cookie3>=0.19", "EbookLib>=0.18"]
+
+[project.scripts]
+lofterspider = "cli.run:main"
+
+[project.gui-scripts]
+lofterspider-gui = "gui.app:main"
+
+[tool.setuptools]
+packages = ["lofter", "lofter.tasks", "cli", "gui"]
+
+[tool.setuptools.package-data]
+lofter = ["py.typed"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["E501"]
